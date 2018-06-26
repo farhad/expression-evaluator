@@ -2,12 +2,10 @@ package io.github.farhad.rpn;
 
 import java.math.BigDecimal;
 
-public class MultiplyOperation implements Operation{
+public class MultiplyOperation extends BinaryOperation{
+
     @Override
-    public void apply(OperandStack stack) {
-        BigDecimal firstValue = stack.peek();
-        stack.pop();
-        BigDecimal secondValue = stack.peek();
-        stack.replaceTop(secondValue.multiply(firstValue));
+    protected BigDecimal calculate(BigDecimal first, BigDecimal second) {
+        return first.multiply(second);
     }
 }

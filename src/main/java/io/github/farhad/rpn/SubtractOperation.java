@@ -2,13 +2,9 @@ package io.github.farhad.rpn;
 
 import java.math.BigDecimal;
 
-public class SubtractOperation implements Operation {
+public class SubtractOperation extends BinaryOperation{
     @Override
-    public void apply(OperandStack stack) {
-
-        BigDecimal firstValue = stack.peek();
-        stack.pop();
-        BigDecimal secondValue = stack.peek();
-        stack.replaceTop(secondValue.subtract(firstValue));
+    protected BigDecimal calculate(BigDecimal first, BigDecimal second) {
+        return first.subtract(second);
     }
 }

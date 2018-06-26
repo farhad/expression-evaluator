@@ -47,6 +47,5 @@ public class OperationTest {
 
     @After
     public void tearDown(){
-
     }
 }
