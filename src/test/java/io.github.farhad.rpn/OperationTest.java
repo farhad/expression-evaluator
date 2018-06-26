@@ -22,25 +22,25 @@ public class OperationTest {
 
     @Test
     public void testAdd(){
-        calculator.add();
+        calculator.execute("+");
         Assert.assertEquals(BigDecimal.valueOf(20),calculator.getAccumulator());
     }
 
     @Test
     public void testSubtract(){
-        calculator.subtract();
+        calculator.execute("-");
         Assert.assertEquals(BigDecimal.valueOf(-10),calculator.getAccumulator());
     }
 
     @Test
     public void testMultiply(){
-        calculator.multiply();
+        calculator.execute("*");
         Assert.assertEquals(BigDecimal.valueOf(75),calculator.getAccumulator());
     }
 
     @Test
     public void testDivide(){
-        calculator.divide();
+        calculator.execute("/");
         BigDecimal expected = BigDecimal.valueOf(0.33333d).setScale(5,BigDecimal.ROUND_HALF_EVEN) ;
         Assert.assertEquals(expected,calculator.getAccumulator());
     }

@@ -23,19 +23,24 @@ public class Calculator {
         stack.pop();
     }
 
-    public void add() {
-        new AddOperation().apply(stack);
-    }
-
-    public void subtract() {
-        new SubtractOperation().apply(stack);
-    }
-
-    public void multiply() {
-        new MultiplyOperation().apply(stack) ;
-    }
-
-    public void divide() {
-        new DivideOperation().apply(stack);
+    public void execute(String operator) {
+        switch (operator){
+            case "+" : {
+                new AddOperation().apply(stack);
+                break;
+            }
+            case "-" :{
+                new SubtractOperation().apply(stack);
+                break;
+            }
+            case "*" :{
+                new MultiplyOperation().apply(stack);
+                break;
+            }
+            case "/":{
+                new DivideOperation().apply(stack);
+                break;
+            }
+        }
     }
 }
