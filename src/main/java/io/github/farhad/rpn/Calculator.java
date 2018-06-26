@@ -24,30 +24,18 @@ public class Calculator {
     }
 
     public void add() {
-        BigDecimal firstValue = stack.peek();
-        stack.pop();
-        BigDecimal secondValue = stack.peek();
-        stack.replaceTop(firstValue.add(secondValue));
+        new AddOperation().apply(stack);
     }
 
     public void subtract() {
-        BigDecimal firstValue = stack.peek();
-        stack.pop();
-        BigDecimal secondValue = stack.peek();
-        stack.replaceTop(secondValue.subtract(firstValue));
+        new SubtractOperation().apply(stack);
     }
 
     public void multiply() {
-        BigDecimal firstValue = stack.peek();
-        stack.pop();
-        BigDecimal secondValue = stack.peek();
-        stack.replaceTop(secondValue.multiply(firstValue));
+        new MultiplyOperation().apply(stack) ;
     }
 
     public void divide() {
-        BigDecimal firstValue = stack.peek();
-        stack.pop();
-        BigDecimal secondValue = stack.peek();
-        stack.replaceTop(secondValue.divide(firstValue,5, BigDecimal.ROUND_HALF_EVEN));
+        new DivideOperation().apply(stack);
     }
 }
