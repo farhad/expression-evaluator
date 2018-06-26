@@ -1,14 +1,16 @@
 package io.github.farhad.rpn;
 
+import java.math.BigDecimal;
+
 public class Calculator {
 
-    private long value ;
+    private BigDecimal accumulator = BigDecimal.ZERO ;
 
-    public long getValue() {
-        return value;
+    public BigDecimal getAccumulator() {
+        return accumulator;
     }
 
-    public void setValue(long value) {
-        this.value = value;
+    public void setAccumulator(BigDecimal accumulator) {
+        this.accumulator = accumulator;
     }
 }
