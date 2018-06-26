@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 
 import static org.junit.Assert.*;
 
-public class CalculatorTest {
+public class NewCalculatorTest {
 
     private Calculator calculator ;
     @Before
@@ -29,6 +29,25 @@ public class CalculatorTest {
 
         calculator.setAccumulator(BigDecimal.valueOf(23));
         assertEquals(calculator.getAccumulator(),BigDecimal.valueOf(23)) ;
+    }
+
+    @Test
+    public void testEnteringAndDroppingValues(){
+
+        BigDecimal valueOne = new BigDecimal(10) ;
+        BigDecimal valueTwo = new BigDecimal(20) ;
+        BigDecimal valueThree = new BigDecimal(30) ;
+
+        calculator.setAccumulator(valueOne);
+        calculator.enter() ;
+        calculator.setAccumulator(valueTwo);
+        calculator.enter() ;
+        calculator.setAccumulator(valueThree);
+        assertEquals(valueThree,calculator.getAccumulator());
+        calculator.drop();
+        assertEquals(valueTwo,calculator.getAccumulator());
+        calculator.drop() ;
+        assertEquals(valueOne,calculator.getAccumulator());
     }
 
     @After
